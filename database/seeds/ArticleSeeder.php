@@ -20,7 +20,7 @@ class ArticleSeeder extends Seeder
 
         $listFakeName=[
             'Tiziano',
-            'Alessandrp',
+            'Alessandro',
             'Andrea',
             'Fabiana',
             'Renzo',
@@ -44,8 +44,8 @@ class ArticleSeeder extends Seeder
 
             $newArticle = new Article();
             $newArticle->title = $faker->sentence();
-            $newArticle->description = $faker->paragraph(4);
-            $newArticle->image = $faker->image(null, 360, 360, 'animals', true);
+            $newArticle->description = $faker->paragraph(6);
+            $newArticle->image = $faker->imageUrl( 360, 360, 'animals', true);
 
             $randomKey = array_rand($listOfAuthorID,1);
             $randomAuthor = $listOfAuthorID[$randomKey];
