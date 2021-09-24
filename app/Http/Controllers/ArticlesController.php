@@ -50,29 +50,20 @@ class ArticlesController extends Controller
             'title'=>'string',
         ]);
 
-        /* $data = $request->all();
-        
-        $author = new Author();
-        $author->form_factor = $data['form_factor'];
-        $author->publisher = $data['publisher'];
-        $author->publication_year = $data['publication_year'];
-        $author->save();
+        $data = $request->all();
 
+        $newArticle = new Article();
+        $newArticle->image = $data['image'];
+        $newArticle->description = $data['description'];
+        $newArticle->title = $data['title'];
 
-        $newPost = new Article();
-        $newPost->cover = $data['cover'];
-        $newPost->description = $data['description'];
-        $newPost->likes = $data['likes'];
-        
-        $newPost->post_detail_id = $author->id;
+        $newArticle->author_id = $data['author_id'];
 
-        $newPost->category_id = $data['category_id'];
-
-        $newPost->save();
+        $newArticle->save();
 
         
 
-        return redirect()->route('posts.show',['post' => $newPost->id]); */
+        return redirect()->route('articles.show',['article' => $newArticle->id]); 
 
 
 
