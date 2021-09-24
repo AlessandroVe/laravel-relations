@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Article;
+use App\Author;
 
 class ArticlesController extends Controller
 {
@@ -31,7 +32,8 @@ class ArticlesController extends Controller
      */
     public function create()
     {
-        return view('Articles_views.articles_create');
+        $authors = Author::all();
+        return view('Articles_views.articles_create',compact('authors'));
     }
 
     /**
@@ -47,7 +49,31 @@ class ArticlesController extends Controller
             'description'=>'string',
             'title'=>'string',
         ]);
+
+        /* $data = $request->all();
         
+        $postDetail = new Author();
+        $postDetail->form_factor = $data['form_factor'];
+        $postDetail->publisher = $data['publisher'];
+        $postDetail->publication_year = $data['publication_year'];
+        $postDetail->save();
+
+
+        $newPost = new Article();
+        $newPost->cover = $data['cover'];
+        $newPost->description = $data['description'];
+        $newPost->likes = $data['likes'];
+        
+        $newPost->post_detail_id = $postDetail->id;
+
+        $newPost->category_id = $data['category_id'];
+
+        $newPost->save();
+
+        
+
+        return redirect()->route('posts.show',['post' => $newPost->id]); */
+
 
 
 

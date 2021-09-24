@@ -34,6 +34,15 @@
         </div>
 
         <br>
+        <h2>Scegli l'autore</h2>
+        <div class="form-group d-flex align-items-center">
+            <select name="author_id" id="">
+                <option selected>Choose...</option>
+                @foreach($authors as $author)
+                    <option value="{{$author->id}}">{{$author->name}} , {{$author->surname}} </option>
+                @endforeach
+            </select>
+        </div>    
 
         <button type="submit" class="btn btn-primary">Crea</button>
     </form>
