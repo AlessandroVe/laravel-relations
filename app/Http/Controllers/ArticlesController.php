@@ -42,7 +42,11 @@ class ArticlesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'image'=>'url',
+            'description'=>'string',
+            'title'=>'string',
+        ]);
     }
 
     /**

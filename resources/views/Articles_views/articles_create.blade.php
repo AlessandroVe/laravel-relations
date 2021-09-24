@@ -13,7 +13,7 @@
         </div>
     @endif
     <div class='container'>
-    <form action=""method="post">
+    <form action="{{route('articles.store')}}" method="post">
         @csrf
         
         <div class="form-group d-flex align-items-center">
@@ -32,7 +32,7 @@
             <label for="immagine">Immagine: </label>
             <textarea placeholder="Inserici un l'indirizzo https dell'immagine " name="image" id="immagine" cols="30" rows="10"></textarea>
         </div>
-        
+
         <br>
 
         <button type="submit" class="btn btn-primary">Crea</button>
