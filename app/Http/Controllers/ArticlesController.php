@@ -52,11 +52,11 @@ class ArticlesController extends Controller
 
         /* $data = $request->all();
         
-        $postDetail = new Author();
-        $postDetail->form_factor = $data['form_factor'];
-        $postDetail->publisher = $data['publisher'];
-        $postDetail->publication_year = $data['publication_year'];
-        $postDetail->save();
+        $author = new Author();
+        $author->form_factor = $data['form_factor'];
+        $author->publisher = $data['publisher'];
+        $author->publication_year = $data['publication_year'];
+        $author->save();
 
 
         $newPost = new Article();
@@ -64,7 +64,7 @@ class ArticlesController extends Controller
         $newPost->description = $data['description'];
         $newPost->likes = $data['likes'];
         
-        $newPost->post_detail_id = $postDetail->id;
+        $newPost->post_detail_id = $author->id;
 
         $newPost->category_id = $data['category_id'];
 
