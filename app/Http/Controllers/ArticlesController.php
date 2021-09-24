@@ -47,6 +47,10 @@ class ArticlesController extends Controller
             'description'=>'string',
             'title'=>'string',
         ]);
+
+        
+
+
     }
 
     /**
